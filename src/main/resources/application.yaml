@@ -10,3 +10,7 @@ spring:
     password: w0fng_client
   http:
     log-request-details: true
+  security:
+    user:
+      name: youzhian
+      password: 123

@@ -2,6 +2,7 @@ package com.lyv.security.modules.login.controller;
 
 import com.lyv.security.modules.BaseController;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,7 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class LoginController extends BaseController {
 
-    @PostMapping("/login")
+    @GetMapping("/login")
+    public String login(){
+
+        return "login";
+    }
+
+    @PostMapping("/doLogin")
     public String login(String name,String poassword){
 
         return "index";
