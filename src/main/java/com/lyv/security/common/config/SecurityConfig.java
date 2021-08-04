@@ -64,8 +64,10 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(verifyCodeFilter, UsernamePasswordAuthenticationFilter.class);
         //开启登录配置
         http.authorizeRequests()
-            .antMatchers("/hello").hasRole("admin") //表示hello接口需要admin角色才能访问
-            .anyRequest().authenticated() //表示其他接口只需登录即可访问
+            //表示hello接口需要admin角色才能访问
+            .antMatchers("/hello").hasRole("admin")
+            //表示其他接口只需登录即可访问
+            .anyRequest().authenticated()
             .and()
             .formLogin()
             //定义登录页面，未登录时，访问一个需要登录之后才能访问的接口，会自动跳转到该页面
