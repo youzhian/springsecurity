@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -27,7 +28,7 @@ import java.io.PrintWriter;
  * security配置类
  * @author youzhian
  */
-@Configuration
+@EnableWebSecurity
 public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Resource
@@ -47,11 +48,11 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
          */
         //增加用户,可增加多个用户
         auth.inMemoryAuthentication()
-                .withUser("zhangsan").roles("admin").password("$2a$10$OR3VSksVAmCzc.7WeaRPR.t0wyCsIj24k0Bne8iKWV1o.V9wsP8Xe")
+                .withUser("zhangsan").roles("admin").password("123")
                 .and()
-                .withUser("lisi").roles("user").password("$2a$10$p1H8iWa8I4.CA.7Z8bwLjes91ZpY.rYREGHQEInNtAp4NzL6PLKxi")
+                .withUser("lisi").roles("user").password("123")
                 .and()
-                .withUser("you").roles("admin").password("{noop}123");
+                .withUser("you").roles("admin").password("123");
     }
 
     /**

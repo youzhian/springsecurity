@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/login")
 public class LoginController extends BaseController {
 
-    @GetMapping("/login")
+    @GetMapping("/")
     public String login(){
 
         return "login/login";
     }
 
     @PostMapping("/doLogin")
-    public String login(String name,String poassword){
+    public String login(String username,String poassword){
 
         return "index";
     }
