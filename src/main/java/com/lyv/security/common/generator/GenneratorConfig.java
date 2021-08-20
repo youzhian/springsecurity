@@ -13,7 +13,7 @@ public class GenneratorConfig {
     /**
      * 数据库驱动类名
      */
-    public static String driverName = "com.mysql.jdbc.Driver";
+    public static String driverName = "com.mysql.cj.jdbc.Driver";
     /**
      * 数据库连接地址
      */

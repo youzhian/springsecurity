@@ -2,7 +2,6 @@ package com.lyv.security.common.config;
 
 import com.lyv.security.common.filter.VerifyCodeFilter;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -28,7 +27,7 @@ import java.io.PrintWriter;
  * security配置类
  * @author youzhian
  */
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Resource
@@ -48,6 +47,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
          */
         //增加用户,可增加多个用户
         auth.inMemoryAuthentication()
+                .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("zhangsan").roles("admin").password("123")
                 .and()
                 .withUser("lisi").roles("user").password("123")

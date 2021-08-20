@@ -16,7 +16,7 @@ public class MainController {
      * 首页
      * @return
      */
-    @GetMapping("/")
+    @GetMapping({"/","/index"})
     public ModelAndView index(){
 
         ModelAndView mv = new ModelAndView();

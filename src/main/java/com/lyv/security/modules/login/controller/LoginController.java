@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author youzhian
  */
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController extends BaseController {
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public String login(){
 
         return "login/login";
@@ -24,5 +24,9 @@ public class LoginController extends BaseController {
     public String login(String username,String poassword){
 
         return "index";
+    }
+    @GetMapping("/logout")
+    public String logout(){
+        return "login/login";
     }
 }
